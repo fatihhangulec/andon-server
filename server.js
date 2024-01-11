@@ -69,10 +69,10 @@ veriOlustur(graphs.kompresor_isi);
 veriOlustur(graphs.freze);
 veriOlustur(graphs.freze_2);
 
-app.listen(port, () => {
-    console.log(`Sunucu Başarılı çalışıyor: ${port}`);
-});
-
 app.get(`/degerler`, (req, res) => {
     res.json(values);
+});
+
+app.listen(port, () => {
+    console.log(`Sunucu Başarılı çalışıyor: ${port}`);
 });
