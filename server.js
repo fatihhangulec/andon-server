@@ -50,10 +50,6 @@ var rastgeleSayiUret = (min,max) => {
     return (min + Math.random() * (max - min)).toFixed(2);
 };
 
-app.get(`/degerler`, (req, res) => {
-    res.json(values);
-});
-
 var yaziOlustur = (name,min,max) => {
     var sayi = setInterval(()=>{rastgeleSayiUret(min,max)},800);
     values[name] = {sayi: sayi};
@@ -75,4 +71,8 @@ veriOlustur(graphs.freze_2);
 
 app.listen(port, () => {
     console.log(`Sunucu Başarılı çalışıyor: ${port}`);
+});
+
+app.get(`/degerler`, (req, res) => {
+    res.json(values);
 });
